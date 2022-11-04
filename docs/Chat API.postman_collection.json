@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "cf99bab9-200b-4815-ba57-d371a3131107",
+		"name": "Chat API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21161594"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Alexander\",\r\n    \"lastName\": \"Casas\",\r\n    \"email\": \"alexandercasasnqnq@gmail.com\",\r\n    \"password\": \"qwerty\",\r\n    \"phone\": \"+542991577533\",\r\n    \"birthday\": \"1997/06/14\",\r\n    \"gender\": \"Macho alfa dominante, domador de fieras y deborador de mundos\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"alexandercasasnqnq@gmail.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get my user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3NmJlOTUyLWZlZTAtNDkzNy04MzA1LTgxYTFhMmEzZjRmZSIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2NjY4MTcxMjV9.4OW82XUK61j8H0OwkxtONpYSwsq0IAdARPn99FspwAM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/v1/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update my user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3NmJlOTUyLWZlZTAtNDkzNy04MzA1LTgxYTFhMmEzZjRmZSIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2NjY4MTcxMjV9.4OW82XUK61j8H0OwkxtONpYSwsq0IAdARPn99FspwAM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"Argentine\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete my user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3NmJlOTUyLWZlZTAtNDkzNy04MzA1LTgxYTFhMmEzZjRmZSIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2NjY4MTcxMjV9.4OW82XUK61j8H0OwkxtONpYSwsq0IAdARPn99FspwAM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/v1/users/afa26ae3-ff83-4869-89d6-a182614ce43d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"afa26ae3-ff83-4869-89d6-a182614ce43d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all conversations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/v1/conversations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new conversation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFmYTI2YWUzLWZmODMtNDg2OS04OWQ2LWExODI2MTRjZTQzZCIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5xQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY2ODE4NzgyfQ.FVHChB-RYEUzaJFwO-1K_LTuakO0Nv-mJ3koC7XIOmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"title of the conversation\",\r\n    \"imageUrl\": \"i donno, just a text\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/conversations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get conversation by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/v1/conversations/8a18c0b3-05d9-42cc-892e-a63e1d1b6dff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations",
+						"8a18c0b3-05d9-42cc-892e-a63e1d1b6dff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/v1/conversations/8a18c0b3-05d9-42cc-892e-a63e1d1b6dff/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations",
+						"8a18c0b3-05d9-42cc-892e-a63e1d1b6dff",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send new message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFmYTI2YWUzLWZmODMtNDg2OS04OWQ2LWExODI2MTRjZTQzZCIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5xQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY2ODE4NzgyfQ.FVHChB-RYEUzaJFwO-1K_LTuakO0Nv-mJ3koC7XIOmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"The message content\",\r\n    \"conversationId\": \"8a18c0b3-05d9-42cc-892e-a63e1d1b6dff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/conversations/afa26ae3-ff83-4869-89d6-a182614ce43d/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations",
+						"afa26ae3-ff83-4869-89d6-a182614ce43d",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete message by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFmYTI2YWUzLWZmODMtNDg2OS04OWQ2LWExODI2MTRjZTQzZCIsImVtYWlsIjoiYWxleGFuZGVyY2FzYXNucW5xQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY2ODE4NzgyfQ.FVHChB-RYEUzaJFwO-1K_LTuakO0Nv-mJ3koC7XIOmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"The message content\",\r\n    \"conversationId\": \"8a18c0b3-05d9-42cc-892e-a63e1d1b6dff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/conversations/afa26ae3-ff83-4869-89d6-a182614ce43d/messages/d2796cdb-d279-4d7c-bd6e-c304691726f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"conversations",
+						"afa26ae3-ff83-4869-89d6-a182614ce43d",
+						"messages",
+						"d2796cdb-d279-4d7c-bd6e-c304691726f9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
